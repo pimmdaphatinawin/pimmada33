@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จ่าหน้าซองจดหมาย</title>
+    <style>
+        
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #000000;
+            margin: px;
+            padding: 90px;
+        }
+
+        .envelope {
+            width: 700px;
+            height: 500px;
+            padding: 20px;
+            border: 1px solid #000;
+            background-color: #ffffff;
+            position: relative;
+            font-size: 16px;
+        }
+
+        .sender {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .recipient {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+        }
+
+        .address-title {
+            font-weight: bold;
+            font-size: 30px;
+            text-decoration: underline;
+            margin-bottom: 15px;
+        }
+
+        .info {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .info:last-of-type {
+            margin-bottom: 20px;
+        }
+
+        .date {
+            position: absolute;
+            bottom: 50px;
+            right: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope">
+        <div class="sender">
+            <div class="address-title">ผู้ส่ง</div>
+            <div class="info">ชื่อ: <?php echo isset($_GET['sender_name']) ? htmlspecialchars($_GET['sender_name']) : 'ไม่ระบุ'; ?></div>
+            <div class="info">บ้านเลขที่: <?php echo isset($_GET['sender_house_number']) ? htmlspecialchars($_GET['sender_house_number']) : 'ไม่ระบุ'; ?></div>
+            <div class="info">หมู่บ้าน: <?php echo isset($_GET['sender_village']) ? htmlspecialchars($_GET['sender_village']) : 'ไม่ระบุ'; ?></div>
+            <div class="info">ซอย: <?php echo isset($_GET['sender_alley']) ? htmlspecialchars($_GET['sender_alley']) : 'ไม่ระบุ'; ?></div>
+            <div class="info">ตำบล: <?php echo isset($_GET['sender_sub_district']) ? htmlspecialchars($_GET['sender_sub_district']) : 'ไม่ระบุ'; ?></div>
+            <div class="info">อำเภอ: <?php echo isset($_GET['sender_district']) ? htmlspecialchars($_GET['sender_district']) : 'ไม่ระบุ'; ?></div>
+            <div class="info">จังหวัด: <?php echo isset($_GET['sender_province']) ? htmlspecialchars($_GET['sender_province']) : 'ไม่ระบุ'; ?></div>
+        </div>
+
+        <div class="recipient">
+            <div class="address-title">ผู้รับ</div>
+            <div class="info">ชื่อ: <?php echo isset($_GET['receiver_name']) ? htmlspecialchars($_GET['receiver_name']) : 'ไม่ระบุ'; ?></div>
+            <div class="info">บ้านเลขที่: <?php echo isset($_GET['receiver_house_number']) ? htmlspecialchars($_GET['receiver_house_number']) : 'ไม่ระบุ'; ?></div>
+            <div class="info">หมู่บ้าน: <?php echo isset($_GET['receiver_village']) ? htmlspecialchars($_GET['receiver_village']) : 'ไม่ระบุ'; ?></div>
+            <div class="info">ซอย: <?php echo isset($_GET['receiver_alley']) ? htmlspecialchars($_GET['receiver_alley']) : 'ไม่ระบุ'; ?></div>
+            <div class="info">ตำบล: <?php echo isset($_GET['receiver_sub_district']) ? htmlspecialchars($_GET['receiver_sub_district']) : 'ไม่ระบุ'; ?></div>
+            <div class="info">อำเภอ: <?php echo isset($_GET['receiver_district']) ? htmlspecialchars($_GET['receiver_district']) : 'ไม่ระบุ'; ?></div>
+            <div class="info">จังหวัด: <?php echo isset($_GET['receiver_province']) ? htmlspecialchars($_GET['receiver_province']) : 'ไม่ระบุ'; ?></div>
+        </div>
+
+        <!-- <div class="date">วันที่ส่ง: <?php echo isset($_GET['send_date']) ? htmlspecialchars($_GET['send_date']) : 'ไม่ระบุ'; ?></div> -->
+    </div>
+</body>
+</html>
